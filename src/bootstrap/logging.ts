@@ -7,7 +7,7 @@ export const logger = createLogger({
   transports: [
     new transports.File({ filename: "combined.log" }),
     new transports.MongoDB({
-      db: "mongodb://localhost/example",
+      db: "mongodb://localhost/english",
       level: "info",
     }),
   ],

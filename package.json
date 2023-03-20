@@ -58,6 +58,7 @@
     "express": "^4.17.2",
     "express-async-errors": "^3.1.1",
     "fawn": "^2.1.5",
+    "free-translate": "^0.6.1",
     "helmet": "^6.0.1",
     "joi": "^17.8.3",
     "joi-password-complexity": "^5.1.0",
