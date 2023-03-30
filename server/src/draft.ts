@@ -8,9 +8,9 @@ async function App() {
   const wordsStat = getStat(text, findWords, getAlignWords);
   const punctuationStat = getStat(text, findPunctuation);
 
-  const translatedText = await translate("Hello World", {
+  const translatedText = await translate(text, {
     from: "en",
-    to: "ja",
+    to: "ru",
   });
 
   // getPartsOfSpeech().forEach(({ name, description }) => {
@@ -18,6 +18,9 @@ async function App() {
   // });
 
   console.log({ wordsStat, punctuationStat, translatedText });
+
+  const partsOfSpeech = getPartsOfSpeech();
+  console.log(partsOfSpeech);
 }
 
 export default App;

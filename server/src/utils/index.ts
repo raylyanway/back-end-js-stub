@@ -6,5 +6,9 @@ export const addPartOfSpeech = async (name: string, description: string) => {
     description,
   });
 
-  await partOfSpeech.save();
+  return await partOfSpeech.save();
+};
+
+export const getPartsOfSpeech = async () => {
+  return await PartOfSpeech.find({});
 };

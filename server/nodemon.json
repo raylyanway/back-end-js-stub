@@ -1,0 +1,7 @@
+{
+  "watch": ["src", "../client/src"],
+  "ext": ".ts,.tsx,.js",
+  "ignore": [],
+  "NODE_ENV": "development",
+  "exec": "npm run build:front && npx ts-node ./src/index.ts"
+}
