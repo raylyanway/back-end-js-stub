@@ -1,6 +1,6 @@
 import { translate } from "free-translate";
 
-import { addPartOfSpeech } from "./utils";
+import { addPartOfSpeech, addWordsToDatabase } from "./utils";
 
 async function App() {
   const text =
@@ -16,6 +16,27 @@ async function App() {
   // getPartsOfSpeech().forEach(({ name, description }) => {
   //   addPartOfSpeech(name, description);
   // });
+
+  const words = [
+    {
+      position: 2,
+      word: "be",
+      translation: "быть",
+      partOfSpeech: "verb",
+      meaning: "exist or occur; take place",
+      meaningTranslation: "существовать или происходить; происходить",
+      examples: [
+        { sentence: "I am a student", translation: "Я студент" },
+        {
+          sentence: "This event will be held tomorrow",
+          translation: "Это мероприятие состоится завтра",
+        },
+      ],
+    },
+    // Add more words here
+  ];
+
+  addWordsToDatabase(words);
 
   console.log({ wordsStat, punctuationStat, translatedText });
 
