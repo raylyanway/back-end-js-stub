@@ -10,12 +10,13 @@
     "prettier": "npx prettier server client --check",
     "prettier:fix": "npm run prettier -- --write",
     "start": "cd server && npm start",
-    "start:dev": "cd server && npm run start:dev"
+    "start:dev": "concurrently --kill-others \"cd server && npm run start:dev\" \"cd client && npm run start\""
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "concurrently": "^8.0.1",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.27.5",
