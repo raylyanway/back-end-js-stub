@@ -1,5 +1,4 @@
-import { translate } from "free-translate";
-
+import { translate } from "./translator";
 import { addPartOfSpeech, addWordsToDatabase } from "./utils";
 
 async function App() {
@@ -36,12 +35,12 @@ async function App() {
     // Add more words here
   ];
 
-  addWordsToDatabase(words);
+  // addWordsToDatabase(words);
 
   console.log({ wordsStat, punctuationStat, translatedText });
 
-  const partsOfSpeech = getPartsOfSpeech();
-  console.log(partsOfSpeech);
+  // const partsOfSpeech = getPartsOfSpeech();
+  // console.log(partsOfSpeech);
 }
 
 export default App;

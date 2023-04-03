@@ -16,4 +16,4 @@ export const server = app.listen(port, () =>
   logger.info(`Listening on port ${port}...`)
 );
 
-// draft();
+draft();
