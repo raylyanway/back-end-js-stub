@@ -1,8 +1,11 @@
 import debug from "debug";
+import { config } from "dotenv";
 import express from "express";
 
 import { bootstrap, logger } from "./bootstrap";
 import draft from "./draft";
+
+config();
 
 const app = express();
 // bootstrap();

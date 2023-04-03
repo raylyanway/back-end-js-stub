@@ -1,3 +1,4 @@
+import { collect } from "./collector";
 import { translate } from "./translator";
 import { addPartOfSpeech, addWordsToDatabase } from "./utils";
 
@@ -7,10 +8,10 @@ async function App() {
   const wordsStat = getStat(text, findWords, getAlignWords);
   const punctuationStat = getStat(text, findPunctuation);
 
-  const translatedText = await translate(text, {
-    from: "en",
-    to: "ru",
-  });
+  // const translatedText = await translate(text, {
+  //   from: "en",
+  //   to: "ru",
+  // });
 
   // getPartsOfSpeech().forEach(({ name, description }) => {
   //   addPartOfSpeech(name, description);
@@ -37,10 +38,12 @@ async function App() {
 
   // addWordsToDatabase(words);
 
-  console.log({ wordsStat, punctuationStat, translatedText });
+  // console.log({ wordsStat, punctuationStat, translatedText });
 
   // const partsOfSpeech = getPartsOfSpeech();
   // console.log(partsOfSpeech);
+  const partsOfSpeech = collect();
+  console.log(partsOfSpeech);
 }
 
 export default App;
