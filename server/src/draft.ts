@@ -19,15 +19,15 @@ async function App() {
   //   addPartOfSpeech(name, description);
   // });
 
-  addPartsOfSpeechToDatabase(partsOfSpeech);
-  addWordsToDatabase(words);
+  // addPartsOfSpeechToDatabase(partsOfSpeech);
+  // addWordsToDatabase(words);
 
   // console.log({ wordsStat, punctuationStat, translatedText });
 
   // const partsOfSpeech = getPartsOfSpeech();
   // console.log(partsOfSpeech);
-  // const partsOfSpeech = collect();
-  // console.log(partsOfSpeech);
+  const info = collect();
+  console.log(111, info);
 }
 
 export default App;

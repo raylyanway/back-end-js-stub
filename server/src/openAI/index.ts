@@ -25,6 +25,7 @@ export async function collect() {
   //   });
   //   return;
   // }
+  console.log(888, process.env.OPENAI_API_KEY);
 
   try {
     const completion = await openai.createCompletion({
@@ -32,10 +33,12 @@ export async function collect() {
       prompt: generatePrompt(),
       temperature: 0.6,
     });
-    console.log(33, completion.data.choices[0].text);
+    console.log(44, completion);
+    console.log(55, completion.data.choices[0].text);
     return completion.data.choices[0].text;
     // res.status(200).json({ result: completion.data.choices[0].text });
   } catch (error) {
+    console.log(22, error);
     // Consider adjusting the error handling logic for your use case
     // if (error.response) {
     //   console.error(error.response.status, error.response.data);
@@ -54,7 +57,7 @@ export async function collect() {
 function generatePrompt() {
   return `Give me an array with 1 the most frequent English word using json format with this structure:
   [{
-    position: 2,
+    frequencyRating: 2,
     word: "be",
     transcription: "bi:",
     translation: "быть",
@@ -62,8 +65,8 @@ function generatePrompt() {
     meaning: "exist or occur; take place",
     meaningTranslation: "существовать или происходить; происходить",
     examples: [
-    { sentence: "I am a student", translation: "Я студент" },
-    { sentence: "This event will be held tomorrow", translation: "Это мероприятие состоится завтра" }
+      { sentence: "I am a student", translation: "Я студент" },
+      { sentence: "This event will be held tomorrow", translation: "Это мероприятие состоится завтра" }
     ]
     }]`;
 }
