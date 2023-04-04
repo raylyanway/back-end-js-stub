@@ -1,14 +1,15 @@
-export interface Example {
+export interface IExample {
   sentence: string;
   translation: string;
 }
 
-export interface Word {
-  position: number;
+export interface IWord {
+  frequencyRating: number;
   word: string;
+  transcription: string;
   translation: string;
   partOfSpeech: string;
   meaning: string;
   meaningTranslation: string;
-  examples: Example[];
+  examples: IExample[];
 }

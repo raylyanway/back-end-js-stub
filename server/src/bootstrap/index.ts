@@ -6,7 +6,6 @@ import { routes } from "./routes";
 
 export { logger } from "./logging";
 
-// export const bootstrap = () => {
 export const bootstrap = (app: Express) => {
   routes(app);
   db();

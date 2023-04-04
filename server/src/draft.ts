@@ -1,12 +1,14 @@
 import { collect } from "./collector";
+import { partsOfSpeech } from "./parts_of_speech";
 import { translate } from "./translator";
-import { addPartOfSpeech, addWordsToDatabase } from "./utils";
+import { addPartsOfSpeechToDatabase, addWordsToDatabase } from "./utils";
+import { words } from "./words";
 
 async function App() {
-  const text =
-    "Learn English with our free online listening, grammar, vocabulary and reading activities. Practice your English and get ready for your Cambridge English exam.";
-  const wordsStat = getStat(text, findWords, getAlignWords);
-  const punctuationStat = getStat(text, findPunctuation);
+  // const text =
+  //   "Learn English with our free online listening, grammar, vocabulary and reading activities. Practice your English and get ready for your Cambridge English exam.";
+  // const wordsStat = getStat(text, findWords, getAlignWords);
+  // const punctuationStat = getStat(text, findPunctuation);
 
   // const translatedText = await translate(text, {
   //   from: "en",
@@ -17,33 +19,15 @@ async function App() {
   //   addPartOfSpeech(name, description);
   // });
 
-  const words = [
-    {
-      position: 2,
-      word: "be",
-      translation: "быть",
-      partOfSpeech: "verb",
-      meaning: "exist or occur; take place",
-      meaningTranslation: "существовать или происходить; происходить",
-      examples: [
-        { sentence: "I am a student", translation: "Я студент" },
-        {
-          sentence: "This event will be held tomorrow",
-          translation: "Это мероприятие состоится завтра",
-        },
-      ],
-    },
-    // Add more words here
-  ];
-
-  // addWordsToDatabase(words);
+  addPartsOfSpeechToDatabase(partsOfSpeech);
+  addWordsToDatabase(words);
 
   // console.log({ wordsStat, punctuationStat, translatedText });
 
   // const partsOfSpeech = getPartsOfSpeech();
   // console.log(partsOfSpeech);
-  const partsOfSpeech = collect();
-  console.log(partsOfSpeech);
+  // const partsOfSpeech = collect();
+  // console.log(partsOfSpeech);
 }
 
 export default App;
